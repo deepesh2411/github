@@ -1,0 +1,185 @@
+how-to-push-an-existing-project-to-github
+**********************************************
+way1
+------
+
+git init
+git add -A
+git commit -m 'Added my project'
+git remote add origin git@github.com:scotch-io/my-new-project.git
+git push -u -f origin master
+
+way2
+-----
+git clone <repository url>
+cp -r <folder to copy> <in which to copy>
+cd <path>/
+git status
+git add .
+git commit -m "commit messege"
+git pull origin master
+git push origin master
+
+
+pwd
+
+mkdir project-github
+
+cd project-github/
+
+pwd
+
+git version
+
+git config --global user.name "deepesh2411"
+git config --global user.email "deepesh.r2496@gmail.com"
+git config --global --list
+
+git clone https://github.com/deepesh2411/LinearRegression-Salary-Predictor.git
+
+ls
+
+cd LinearRegression-Salary-Predictor/
+
+ls
+
+git status                                                 -----> gives the status of git
+
+echo "Test Git Quick Start demo" >> start.txt              -----> create a text file with that text
+
+ls                                                         -----> list all the files and folder i that directory
+ls -al                                                     -----> al files and folder along with that also whose name start with .
+
+cat start.txt                                              -----> show the text inside the file
+
+git status
+
+git add start.txt                                          -----> add the files in stage 
+
+git status
+
+git commit -m "Adding start.txt file"                      -----> commit the files 
+
+git status
+
+git push origin master
+
+
+
+
+
+
+git restore --staged <filename>
+
+git restore <filename>
+
+
+part 7 : comparisons
+_________________________________________________________________________
+
+44. basics git status
+
+45. com between working directory and the stagging area
+	git diff
+	git difftool		--for visual display
+
+46. com between working directory and the git repository
+	git diff head
+	git difftool head       --for visual display
+
+47. com between stagging area and the git repository
+	git diff --staged head
+	git difftool --staged head       --for visual display	
+
+48. limiting to one file 
+	git diff -- README.md
+	git difftool -- README.md        --for visual display
+
+49. com between commits
+	git log --oneline
+	git diff ae6f872 head     diff between that commit and head pointer commit
+	git diff head head^       com btwn head and head-1 commit
+	git diff b196780 22c289a  comparisons between git commit id 1 and commit id 2
+
+		this will work with difftool also
+
+50. com btwn local and remote mater
+	git diff master origin/master
+	git difftool master origin/master
+
+
+
+part 8 : Branching and Merging
+_________________________________________________________________________
+
+52.Branching Basics
+*******************
+	git branch -a
+	git branch 
+	git branch mynewbranch              --- creates a branch 
+	git checkout mynewbranch            ---jump to the new branch
+	git log --oneline --decorate
+	git checkout master
+	git branch -m mynewbranch newbranch ---renaming the branch
+	git branch -a                       --- listing the branches
+	git branch -d newbranch             --- deleting the branch
+	git branch -a
+
+53. happy path/ fast forword merge
+**********************************
+	git checkout -b title-change       ---two step in one line creating branch and 						switch to it
+	git branch -a
+	npp simle.html                     --- open the n++ and change and save 
+	git status
+	git commit -am "changing the title of html file"
+	git checkout master
+	git diff master title-change
+	git merge title-change              ---fast forword merge
+	
+
+54. happy path/ Disable fast forword merge
+******************************************
+	git checkout -b add-copyright
+	npp simple.html
+	git status
+	git commit -am "adding copyright notice"
+	git log --oneline --graph --decorate
+	npp README.md
+	git status
+	git commit -am "adding copyright notice to readme file"
+	git log --oneline --graph --decorate
+	git checkout master
+	git merge add-copyright --no-ff
+	git log --oneline --graph --decorate
+	git branch -d add-copyright
+	git log --oneline --graph --decorate
+
+
+
+
+part 9 : Rebasing
+_________________________________________________________________________
+
+59.setup for rebasing conflict
+******************************
+	git checkout master
+	npp simple.html
+	git commit -am "1.master branch before rebase conflict"
+	git checkout -b bigtrouble
+	npp simple.html
+	git commit -am "2.bt branch before rebase conflict"
+	git checkout master
+	npp simple.html
+	git commit -am "3.master branch before rebase conflict"
+	git log --oneline --graph --decorate
+
+60.Abort a rebase
+*****************
+	
+
+
+
+
+
+
+
