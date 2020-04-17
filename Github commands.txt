@@ -6,7 +6,8 @@ way1
 git init
 git add -A
 git commit -m 'Added my project'
-git remote add origin git@github.com:scotch-io/my-new-project.git
+git remote add origin <repository url>
+git pull origin master --allow-unrelated-histories  # this is if error istherewhile pull
 git push -u -f origin master
 
 way2
